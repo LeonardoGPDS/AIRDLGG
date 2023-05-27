@@ -45,6 +45,7 @@ body {
     width: 100%;
     height: calc(100vh - 15px); /* altura do viewport menos a altura da div cobertura */
     background-image: url('fundo.jpeG');
+        background-image: url('https://leonardogpds.github.io/AIRDLGG/fundo.jpeG');
     filter: blur(0px);
     background-size: cover;
     background-position: top left;
