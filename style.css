@@ -188,10 +188,11 @@ body {
     font-weight: bold;
     font-family: 'IBM Plex Mono', monospace;
     text-align: left;}
-
+.button{
+  text-decoration: none;
+}
     .button span a{
       position: absolute;
-
       top: 90%; /* Posiciona o elemento no meio verticalmente */
       left: 86%;
       color: #201e1e;
