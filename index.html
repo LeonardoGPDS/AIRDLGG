@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AIRDLGG - Company </title>
+  <link rel="stylesheet" type="text/css" href="src/css/style.css">
+  <link rel="stylesheet" type="text/css" href="src/JS/style.js">
+  <link rel="icon" href="SRC/img/Avião4.png">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500&family=Press+Start+2P&family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<style>
+.data-atual {
+  position: absolute; /* Define a posição absoluta para permitir o ajuste preciso */
+  top: 35px; /* Ajuste o valor conforme desejado */
+  right: 38px; /* Ajuste o valor conforme desejado */
+}
+.location{
+  margin-left: -40px;
+  font-size: 22px;
+}
+</style>
+<script >
+  
+  function exibirHoraAtual() {
+    var dataAtual = new Date();
+    var hora = dataAtual.getHours();
+    var minutos = dataAtual.getMinutes();
+    var segundos = dataAtual.getSeconds();
+    
+    var horaFormatada = hora < 10 ? '0' + hora : hora;
+    var minutosFormatados = minutos < 10 ? '0' + minutos : minutos;
+    
+    var horaCompleta = horaFormatada + ':' + minutosFormatados;
+    
+    document.getElementById('hora-atual').textContent = horaCompleta;
+
+    var fusoHorario = dataAtual.getTimezoneOffset() / 60;
+      var sinalFusoHorario = fusoHorario >= 0 ? '-' : '+';
+      fusoHorario = Math.abs(fusoHorario);
+      var fusoHorarioFormatado = ' GMT ' + sinalFusoHorario + fusoHorario;
+      
+      document.getElementById('fuso-horario').textContent = fusoHorarioFormatado;
+    
+    setTimeout(exibirHoraAtual, 1000); // Atualiza a hora a cada segundo
+  }
+  
+  function exibirDataAtual() {
+      // Cria um novo objeto Date com a data e hora atuais
+      var dataAtual = new Date();
+      
+      // Obtém os componentes da data
+      var dia = dataAtual.getDate();
+      var mes = dataAtual.getMonth() + 1; // Os meses são indexados a partir de 0, então adicionamos 1
+      var ano = dataAtual.getFullYear();
+      
+      // Formata a data como uma string
+      var dataFormatada = dia + '/' + mes + '/' + ano;
+      
+      // Exibe a data no elemento com o id "data-atual"
+      document.getElementById('data-atual').textContent = dataFormatada;
+    }
+    window.addEventListener("load", getLocation);
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showLocation);
+  } else {
+    alert("Geolocalização não é suportada neste navegador.");
+  }
+}
+
+function showLocation(position) {
+  var latitude = position.coords.latitude;
+  var longitude = position.coords.longitude;
+
+  var xhr = new XMLHttpRequest();
+  var url = "https://nominatim.openstreetmap.org/reverse?format=json&lat=" + latitude + "&lon=" + longitude;
+
+  xhr.open("GET", url, true);
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState == 4 && xhr.status == 200) {
+      var response = JSON.parse(xhr.responseText);
+      var address = response.address;
+
+      var city = address.city;
+      var state = address.state;
+      if (state === "Mato Grosso do Sul") {
+            state = "MS";
+          }
+
+      var locationElement = document.getElementById("location");
+      locationElement.innerHTML = city + ", " + state;
+    }
+  };
+  xhr.send();
+}
+
+
+</script>
+
+</head>
+<body style="background-color: #201e1e;" onload="exibirHoraAtual(),exibirDataAtual(),obterLocalizacao()">
+
+  <div class="cobertura">
+    <span class="the">the   </span><span class="best"> best startup </span><span class="ever"> ever</span></span>
+    <span class="direitos">©Todos os diretos reservados - DGLG Airport Tech Company S/A</span>
+</div>
+  <div class="imagem-fundo"></div>
+  
+  <div class="navbar">
+    <ul class="test">
+      <li><a href="#">TIME</a></li>
+      <li><a href="#">BROWSE</a></li>
+      <li><a href="#">
+        PARCEIROS</a></li>
+    </ul>
+  </div>
+  <div class="navbar-right">
+    <ul class="test">
+      <li><a href="#">HOME</a></li>
+      <li><a href="#">ABOUT</a></li>
+      <li><a href="#" class="sing">SING IN</a></li>
+      <li><a href="#"><i class="fas fa-search"></i></a></li>
+    </ul>
+  </div>
+  <div class="companyname">
+AIRDLGG
+  </div>
+ <div class="Business"><span class="Businesstext">Business</span> <br><span class="Airpoty">Airport</span>
+ </div>
+<div class="ares">Levando tecnologia e inovação pelos ares.
+</div>
+<div class="button" style="text-decoration: none;"><span></span><a href="https://www.instagram.com/">LETS'GO</a></span></div>
+<div class="full-width-div"></div>
+<div class="content">
+<div class="text-box">
+      <br>Conte com a gente!</br>
+      <h1>Brainstorm</h1>
+  <p>Estamos aqui para voar junto<br> com você com melhor da tecnologia,<br>melhor da automação e sistemas.</p>
+</div>
+<div class="temperatura"><a href="#"><a href="#"></a><i class="fas fa-cloud-showers-heavy"></i></a> 17°C</span></p><div>
+      
+<div class="data-atual"><span id="data-atual"></span></div>
+<div class="contente" style="margin-left: -15px;">
+        <span id="hora-atual"></span>  <span id="fuso-horario"></p></span>
+</div>
+
+<div class="location" style="font-family: 'Rajdhani', sans-serif;"><span id="location"></p></span></div><p></p>
+
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="SRC/img/Avião3.png" alt="Serviço 1">
+      <div class="carousel-caption d-none d-md-block">
+        <p>Descrição do Serviço 1</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="SRC/img/Avião2.png" alt="Serviço 2">
+      <div class="carousel-caption d-none d-md-block">
+  
+        <p>Descrição do Serviço 2</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="SRC/img/Avião.png" alt="Serviço 3">
+      <div class="carousel-caption d-none d-md-block">
+        
+        <p>Descrição do Serviço 3</p>
+      </div>
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Anterior</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Próximo</span>
+  </a>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+
+</body>
+</html>
+
+    
+</body>
+</html>
