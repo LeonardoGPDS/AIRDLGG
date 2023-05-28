@@ -44,7 +44,7 @@ body {
     left: 0;
     width: 100%;
     height: calc(100vh - 15px); /* altura do viewport menos a altura da div cobertura */
-    background-image: url('../img/fundo.jpeg');
+    background-image: url('fundo.jpeg');
     filter: blur(0px);
     background-size: cover;
     background-position: top left;
@@ -254,7 +254,7 @@ font-size: 30px;
   top: 400px;
 }
 .carousel-item img {
-  height: 450px; /* Defina a altura desejada para as imagens */
+  height: 480px; /* Defina a altura desejada para as imagens */
   width: auto; /* A largura será ajustada automaticamente para manter a proporção */    
   font-family: 'M PLUS Rounded 1c', sans-serif;
   font-family: 'Press Start 2P', cursive;
