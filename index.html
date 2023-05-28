@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>AIRDLGG - Company </title>
-    <link rel="stylesheet" type="text/css" href="https://leonardogpds.github.io/AIRDLGG/style.css">
+  <link rel="stylesheet" type="text/css" href="https://github.com/LeonardoGPDS/AIRDLGG/style.css">
   <link rel="stylesheet" type="text/css" href="src/JS/style.js">
   <link rel="icon" href="Avião4.png">
   
@@ -37,6 +37,7 @@
 .location{
   margin-left: -40px;
   font-size: 22px;
+  position:absolute;
 }
 .contente{
   position: absolute;
@@ -124,6 +125,7 @@ function showLocation(position) {
 </head>
 <body style="background-color: #201e1e;" onload="exibirHoraAtual(),exibirDataAtual(),obterLocalizacao()">
 
+
   <div class="cobertura">
     <span class="the">the   </span><span class="best"> best startup </span><span class="ever"> ever</span></span>
     <span class="direitos">©Todos os diretos reservados - DGLG Airport Tech Company S/A</span>
@@ -132,15 +134,15 @@ function showLocation(position) {
   
   <div class="navbar">
     <ul class="test">
-      <li><a href="#">TIME</a></li>
-      <li><a href="#">BROWSE</a></li>
-      <li><a href="#">
+      <li><a href="#container1">TIME</a></li>
+      <li><a href="#">FALE CONOSCO</a></li>
+      <li><a href="#parceiros">
         PARCEIROS</a></li>
     </ul>
   </div>
   <div class="navbar-right">
     <ul class="test">
-      <li><a href="#">HOME</a></li>
+      <li><a href="index.html">HOME</a></li>
       <li><a href="#">ABOUT</a></li>
       <li><a href="#" class="sing">SING IN</a></li>
       <li><a href="#"><i class="fas fa-search"></i></a></li>
@@ -152,8 +154,9 @@ AIRDLGG
  <div class="Business"><span class="Businesstext">Business</span> <br><span class="Airpoty">Airport</span>
  </div>
 <div class="ares">Levando tecnologia e inovação pelos ares.
+  <div class="button" ><span><a href="https://www.instagram.com">LETS'GO</a></span></div>
 </div>
-<div class="button" ><span><a href="https://www.instagram.com/">LETS'GO</a></span></div>
+
 <div class="full-width-div"></div>
 <div class="content">
 <div class="text-box">
@@ -171,7 +174,7 @@ AIRDLGG
 <div class="location" style="font-family: 'Rajdhani', sans-serif;"><span id="location"></p></span></div><p></p>
 
 
-<div class="fade-in">
+<div class="fade-in" id="parceiros">
   <h1>Estamos juntos nesse  <br> projeto com nossos<br> parceiros✈︎</h1>
   <p>Vamos juntos agora!</p>
   
@@ -231,19 +234,18 @@ AIRDLGG
 
 <style>
   .transparent-div {
-     width: 1300px;
-     height: 100px; /* Defina a altura desejada para a div */
+     width: 1500px;
      background-color: rgba(0, 0, 0, 0.5); /* Cor de fundo com transparência */
      position: relative;
-     top: 675px;
+     top: 658px;
 height: 400px;
-     left: -634px;
+     left: -690px;
   }
   .transparent-div video{
     width: 40%;
-    position: relative;
-    left: 120px;
-    top: 70px;
+    position: absolute;
+    left: 50px;
+    top: 50px;
 
     
   }
@@ -251,7 +253,7 @@ height: 400px;
 .text-box2{
 position: absolute;
 top: 50px;
-  left: 690px;
+  left: 710px;
 }
 
 .text-box3{
@@ -291,18 +293,18 @@ margin-left: 20px;
 
 <div class="transparent-div">
   <video autoplay muted controls loop>
-    <source src="viideo.mp4" type="video/mp4">
+    <source src="Video.mp4" type="video/mp4">
     <!-- Adicione outros formatos de vídeo aqui, se necessário -->
     Desculpe, seu navegador não suporta a reprodução de vídeo.
   </video>
   <div class="text-box2">Voando juntos com a sustentabilidade</div>
-  <div class="text-box3">" Estamos comprometidos a nos esforçar ao maximos para agirmos de acordo com a sustentabilidade "</div>
+  <div class="text-box3">" Estamos comprometidos a nos esforçar ao maximos para agirmos de acordo com <br> a sustentabilidade "</div>
   </div>
 
 </div>
 <ul class="icones">
   <li class="icone">
-    <img src="SOCIAL.png" alt="Ícone 1">
+    <img src=".SOCIAL.png" alt="Ícone 1">
     <span class="text1">SOCIAL</span>
   </li>
   <li class="icone">
@@ -315,16 +317,121 @@ margin-left: 20px;
 </ul>
 
 
+<style>
 
-  <div class="map">
-    <img src="brasil.jpg" alt="Mapa do Brasil">
+    .container1{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      position:relative;
+      top: 630px;
+      left: -720px;
+      z-index: 1;
+    }
 
-    <!-- Marcadores das cidades -->
-    <div id="city1" class="marker"></div>
-    <div id="city2" class="marker"></div>
-  </div>
+    .person {
+      margin: 0 10px;
+      text-align: center;
+      background-color: rgba(0, 0, 0, 0.6);
+      border-radius: 15px;
+      width:200px;
+    }
 
+    .person img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      margin-top: 10px;
+      
+    }
+
+    .person p {
+      margin-top: 10px;
+      font-size: 18px;
+      color: #fff;
+    }
+
+    .social-icons {
+      margin-top: 20px;
+    }
+
+    .social-icons a {
+      display: inline-block;
+      margin-right: 10px;
+      color: #fff;
+      font-size: 24px;
+    }
+    .video-container {
+    position: absolute;
+    top: 1228px;
+    left: -662px;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+  }
+
+  /* Estilize o vídeo para preencher todo o container */
+  .video-container video {
+    width: 90%;
+    height: 40%;
+    object-fit: cover;
+    top:-100px;
+    filter: brightness(40%);
+  }
   
+</style>
+
+<div class="video-container">
+  <video autoplay loop muted>
+    <source src="SRC/img/Aeroporto Santos Dumont _ Time Lapse.mp4" type="video/mp4">
+    <!-- Adicione outros formatos de vídeo para compatibilidade -->
+  </video>
+</div>
+
+  <div class="container1" id="container1">
+    
+    <div class="person">
+      <img src="diogo.jpg" alt="Foto 1">
+      <p>Diogo Sandim</p><p>(Diretor Técnico )</p>
+      <div class="social-icons">
+        <a href="https://www.facebook.com/diogo.luciano.39"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.instagram.com/diogolucianobrambilla/"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="far fa-envelope"></i></a>
+      </div>
+    </div>
+    <div class="person">
+      <img src="gustavo.jpg" alt="Foto 1">
+      <p>Gustavo Aparecido </p><p>(Diretor Comercial)</p>
+      <div class="social-icons">
+        <a href="https://www.instagram.com/ogusttavo.s/"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="far fa-envelope"></i></a>
+      </div>
+    </div>
+    <div class="person">
+      <img src="tenorio.jpg" alt="Foto 2">
+      <p>Gustavo Tenório</p><p>(Diretor Financeiro)</p>
+      <div class="social-icons">
+        <a href="https://www.facebook.com/gustavo.tenorio.90/"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.instagram.com/tenorio_gus/"><i class="fab fa-instagram"></i></a>
+        <a href="https://WWW.linkedin.com/in/gustavo-ten%C3%B3rio-454821236"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="far fa-envelope"></i></a>
+      </div>
+    </div>
+    <div class="person">
+      <img src="leonardo.jpg" alt="Foto 4">
+      <p>Leonardo Gledson</p><p>(Diretor de Tecnologia)</p>
+      <div class="social-icons">
+        <a href="https://www.facebook.com/leonardo.palhano.948"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.instagram.com/leogpds/"><i class="fab fa-instagram"></i></a>
+        <a href="https://WWW.linkedin.com/in/leonardo-palhano-9598BB15a"><i class="fab fa-linkedin"></i></a>
+        <a href="mailto:leonardo.gpds@gmail.com"><i class="far fa-envelope"></i></a>
+      </div>
+    </div>
+  </div>
+  
+
 
 </body>
 </html>
