@@ -142,9 +142,6 @@ body {
     padding: 5px 10px;
     position: relative;
   }
-
- 
- 
   .test a:hover{
      color:  rgba(19, 19, 19, 0.849);
      background: linear-gradient(to top, transparent 50%, white 50%); /* Fundo gradiente */
@@ -160,11 +157,11 @@ body {
     font-weight: bold;
     text-align: center;
     font-family: 'Rajdhani', sans-serif;
-    background-image: url('Avião4.png');
-    background-size: cover;
-    background-position: center bottom;
-    background-repeat: no-repeat;
-    padding-bottom: 58px; /* Espaçamento abaixo da imagem */
+    background-image: url('../img/Avião4.png');
+      background-size: cover;
+      background-position: center bottom;
+      background-repeat: no-repeat;
+      padding-bottom: 58px; /* Espaçamento abaixo da imagem */
  
   }
   .Business{
@@ -183,18 +180,19 @@ body {
     top: 80%; /* Posiciona o elemento no meio verticalmente */
     left: 77%; /* Posiciona o elemento no meio horizontalmente */
     color: white;
-    font-size: 
-    20px;
+    font-size: 20px;
     font-weight: bold;
     font-family: 'IBM Plex Mono', monospace;
     text-align: left;}
 .button{
   text-decoration: none;
+  top:60px;
+  position: absolute;
+  left: 36%;
+  z-index: 1;
 }
     .button span a{
-      position: absolute;
-      top: 90%; /* Posiciona o elemento no meio verticalmente */
-      left: 86%;
+      position:absolute;
       color: #201e1e;
       font-size: 
       24px;
@@ -204,7 +202,9 @@ body {
       border-radius: 5PX;
     background-color: white;
     padding: 5px 10px;
-     text-decoration: none;
+
+      text-decoration: none;
+
 }
 
   .full-width-div {
@@ -226,7 +226,7 @@ body {
     padding: 10px;
     font-family: 'Rajdhani', sans-serif;
     height: 340px;
-    top: -15px;
+    top: -46px;
   }
   .temperatura{
 position: absolute;
@@ -241,8 +241,8 @@ font-size: 30px;
 
   #carouselExampleIndicators {
     position: absolute;
-    top:346px;
-    left: -240px;
+    top:330px;
+    left: -210px;
     width: 900px;
     margin: 0 auto;
   }
@@ -254,7 +254,7 @@ font-size: 30px;
   top: 400px;
 }
 .carousel-item img {
-  height: 483px; /* Defina a altura desejada para as imagens */
+  height: 450px; /* Defina a altura desejada para as imagens */
   width: auto; /* A largura será ajustada automaticamente para manter a proporção */    
   font-family: 'M PLUS Rounded 1c', sans-serif;
   font-family: 'Press Start 2P', cursive;
