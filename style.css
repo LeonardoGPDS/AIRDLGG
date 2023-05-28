@@ -39,12 +39,12 @@ body {
   padding-left: 550px;
 }
 .imagem-fundo {
-    position: absolute;
+    position:absolute;
     top: 37px; /* altura da div cobertura */
     left: 0;
     width: 100%;
     height: calc(100vh - 15px); /* altura do viewport menos a altura da div cobertura */
-    background-image: url('fundo.jpeg');
+    background-image: url('../img/fundo.jpeg');
     filter: blur(0px);
     background-size: cover;
     background-position: top left;
@@ -226,6 +226,7 @@ body {
     padding: 10px;
     font-family: 'Rajdhani', sans-serif;
     height: 340px;
+    top: -15px;
   }
   .temperatura{
 position: absolute;
@@ -240,9 +241,84 @@ font-size: 30px;
 
   #carouselExampleIndicators {
     position: absolute;
-    top:350px;
-    left: -290px;
-    width: 700px;
+    top:346px;
+    left: -240px;
+    width: 900px;
     margin: 0 auto;
   }
   
+
+.fade-in {
+  position: absolute;
+  left: -600px;
+  top: 400px;
+}
+.carousel-item img {
+  height: 450px; /* Defina a altura desejada para as imagens */
+  width: auto; /* A largura será ajustada automaticamente para manter a proporção */    
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-family: 'Press Start 2P', cursive;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+.partners {
+  display: flex;
+  position: absolute;
+  align-items: center; /* Alinhar os logos verticalmente */
+  left: -600px;
+  top: 650px;
+
+}
+
+.partners img {
+  max-width: 100px; /* Definir a largura máxima dos logos */
+  margin: 0 10px; /* Adicionar margem entre os logos */
+}
+.partners img {
+  max-width: 100px;
+  margin: 0 10px;
+  filter: brightness(40%); /* Definir brilho inicial */
+  transition: filter 0.3s ease-in-out; /* Adicionar uma transição suave */
+}
+
+.partners img:hover {
+  filter: brightness(150%); /* Definir brilho ao passar o mouse */
+}
+.map {
+  top:1300px;
+  position: absolute;
+  width: 600px;
+}
+
+.map img {
+  width: 30%;
+  transition: transform 0.3s ease;
+}
+
+.map img:hover {
+  transform: scale(2.0);
+}
+
+.map .marker {
+  position: absolute;
+  display: inline-block;
+  background-color: red;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: background-color 0.3s ease;
+}
+
+.map .marker:hover {
+  background-color: blue;
+}
+#city1 {
+  top: 40%;
+  left: 30%;
+}
+
+#city2 {
+  top: 60%;
+  left: 45%;
+}
+
